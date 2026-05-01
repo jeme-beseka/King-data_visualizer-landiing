@@ -45,9 +45,7 @@ const SEOHead = ({ title, description, url, image, robots }) => {
       <meta name="twitter:site" content={seoConfig.twitterHandle} />
 
       {/* Schema.org Structured Data */}
-      <script type="application/ld+json">
-        {JSON.stringify(structuredData)}
-      </script>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
     </Helmet>
   );
 };

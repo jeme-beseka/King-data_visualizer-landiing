@@ -1,4 +1,5 @@
-import { BrowserRouter, Routes, Route, lazy, Suspense } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { lazy, Suspense } from 'react';
 import ErrorBoundary from './components/ErrorBoundary';
 import ScrollProgressBar from './components/ScrollProgressBar';
 import CustomCursor from './components/CustomCursor';

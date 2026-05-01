@@ -1,16 +1,10 @@
-import { useEffect, useMemo, useState, memo } from "react";
+import { useEffect, useMemo, useState, memo, lazy, Suspense } from "react";
 import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
 import { FiArrowDown, FiDownload } from "react-icons/fi";
 import { Link } from "react-scroll";
-import {
-  CartesianGrid,
-  Line,
-  LineChart,
-  ResponsiveContainer,
-  Tooltip,
-  XAxis,
-  YAxis,
-} from "recharts";
+
+// Lazy load the chart component to defer Recharts loading
+const HeroChart = lazy(() => import("./HeroChart"));
 
 const baseData = [
   { name: "Mon", revenue: 42, forecast: 38, volatility: 28 },
@@ -234,46 +228,9 @@ const Hero = () => {
             </div>
 
             <div className="h-64 w-full min-h-[256px]">
-              <ResponsiveContainer width="100%" height="100%">
-                <LineChart data={chartData} margin={{ top: 5, right: 12, left: -20, bottom: 5 }}>
-                  <CartesianGrid stroke="rgba(255,255,255,0.08)" strokeDasharray="3 3" />
-                  <XAxis dataKey="name" tick={{ fill: "#8f94aa", fontSize: 12 }} axisLine={false} tickLine={false} />
-                  <YAxis tick={{ fill: "#8f94aa", fontSize: 12 }} axisLine={false} tickLine={false} />
-                  <Tooltip
-                    contentStyle={{
-                      backgroundColor: "rgba(13, 13, 26, 0.95)",
-                      border: "1px solid rgba(255, 215, 0, 0.3)",
-                      borderRadius: "10px",
-                      color: "#fff",
-                    }}
-                  />
-                  <Line
-                    type="monotone"
-                    dataKey="revenue"
-                    stroke="#FFD700"
-                    strokeWidth={2.6}
-                    dot={false}
-                    animationDuration={1200}
-                  />
-                  <Line
-                    type="monotone"
-                    dataKey="forecast"
-                    stroke="#B8860B"
-                    strokeWidth={2.2}
-                    strokeDasharray="4 4"
-                    dot={false}
-                    animationDuration={1500}
-                  />
-                  <Line
-                    type="monotone"
-                    dataKey="volatility"
-                    stroke="#f5deb3"
-                    strokeWidth={1.7}
-                    dot={false}
-                    animationDuration={1700}
-                  />
-                </LineChart>
-              </ResponsiveContainer>
+              <Suspense fallback={<div className="flex h-full items-center justify-center"><div className="h-8 w-8 animate-spin rounded-full border-2 border-gold border-t-transparent" /></div>}>
+                <HeroChart chartData={chartData} />
+              </Suspense>
             </div>
           </motion.div>
           <div className="pointer-events-none absolute inset-x-8 -bottom-6 -z-10 h-14 rounded-full bg-gold/20 blur-2xl" />

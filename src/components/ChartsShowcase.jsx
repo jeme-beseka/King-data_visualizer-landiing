@@ -139,7 +139,7 @@ const ChartsShowcase = () => {
   };
 
   return (
-    <section className="relative overflow-hidden bg-dark px-6 py-24">
+    <section className="relative overflow-hidden bg-dark px-6 py-24" role="region" aria-labelledby="charts-showcase-heading">
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-size-[42px_42px] opacity-35" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_15%,rgba(255,215,0,0.12),transparent_32%),radial-gradient(circle_at_80%_80%,rgba(0,180,216,0.08),transparent_35%)]" />
@@ -147,7 +147,7 @@ const ChartsShowcase = () => {
 
       <div className="relative mx-auto max-w-7xl">
         <div className="mb-12 space-y-4 text-center">
-          <h2 className={sectionTitleClass}>See Your Data Come Alive</h2>
+          <h2 id="charts-showcase-heading" className={sectionTitleClass}>See Your Data Come Alive</h2>
           <div className="mx-auto h-1 w-32 rounded-full gold-gradient" />
           <p className="mx-auto max-w-3xl text-slate-300">
             From trends to correlations, explore every angle with animated, interactive charts

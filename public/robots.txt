@@ -1,0 +1,7 @@
+# King Data Visualizer - robots.txt
+
+User-agent: *
+Allow: /
+Crawl-delay: 1
+
+Sitemap: https://king-datavisualizer.netlify.app/sitemap.xml

@@ -96,10 +96,12 @@ export default function DownloadSection() {
               variants={itemVariants}
               className="font-display text-3xl leading-tight md:text-5xl"
             >
-              <span className="text-white">Download </span>
-              <span className="gold-gradient bg-clip-text text-transparent">King</span>
-              <span className="text-white"> Data Visualizer</span>
+              Download King Data Visualizer for Windows — Free
             </motion.h2>
+
+            <motion.p variants={itemVariants} className="mt-4 text-slate-300">
+              King Data Visualizer is completely free. No subscription, no account required. Built by Jeme Beseka for data analysts, researchers, and students.
+            </motion.p>
 
             <motion.div variants={itemVariants} className="mt-5">
               <span className="inline-flex items-center rounded-full border border-gold/35 bg-gold/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wide text-gold-light md:text-sm">
@@ -111,6 +113,7 @@ export default function DownloadSection() {
               <motion.button
                 type="button"
                 onClick={handleDownload}
+                aria-label="Download King Data Visualizer v3.3 for Windows 10 and Windows 11"
                 whileHover={
                   shouldReduceMotion
                     ? {}

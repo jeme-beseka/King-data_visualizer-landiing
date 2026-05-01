@@ -104,18 +104,19 @@ const Footer = () => {
                   </h3>
                 </motion.div>
                 
-                <p className="text-slate-400 text-sm">
-                  Built by Jeme Beseka
-                </p>
-                
-                <a 
-                  href="mailto:j.beseka@gmail.com"
-                  className="inline-flex items-center gap-2 text-amber-400 hover:text-amber-300 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-amber-400 focus:ring-offset-2 focus:ring-offset-[#0D0D1A] rounded"
-                  aria-label="Send email to j.beseka@gmail.com"
-                >
-                  <RiMailLine className="w-4 h-4" />
-                  <span className="text-sm hover:underline">j.beseka@gmail.com</span>
-                </a>
+                <address className="not-italic">
+                  <p className="text-slate-400 text-sm mb-2">
+                    Built by Jeme Beseka
+                  </p>
+                  <a 
+                    href="mailto:j.beseka@gmail.com"
+                    className="inline-flex items-center gap-2 text-amber-400 hover:text-amber-300 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-amber-400 focus:ring-offset-2 focus:ring-offset-[#0D0D1A] rounded"
+                    aria-label="Send email to j.beseka@gmail.com"
+                  >
+                    <RiMailLine className="w-4 h-4" />
+                    <span className="text-sm hover:underline">j.beseka@gmail.com</span>
+                  </a>
+                </address>
                 
                 <div className="pt-2">
                   <span className="inline-block px-3 py-1 bg-amber-500/10 border border-amber-500/30 rounded-full text-xs text-amber-400 font-medium">
@@ -260,7 +261,7 @@ const Footer = () => {
             <div className="pt-8 border-t border-amber-500/20">
               <div className="flex flex-col md:flex-row justify-between items-center gap-4">
                 <p className="text-slate-500 text-sm">
-                  © {currentYear} Jeme Beseka. All rights reserved. 2026
+                  © {currentYear} Jeme Beseka. King Data Visualizer is a free and open-source data visualization desktop application.
                 </p>
                 
                 <motion.div 

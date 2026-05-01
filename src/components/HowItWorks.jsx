@@ -14,7 +14,7 @@ const STEPS = [
     micro: "Install",
     title: "Download & Install",
     description:
-      "Click the Download button, run the .exe installer, and launch King Data Visualizer. No Java installation required — everything is bundled.",
+      "Download King Data Visualizer, run the .exe installer, and launch the app. No Java installation required — everything is bundled.",
     Silhouette: SilhouetteInstall,
   },
   {
@@ -100,7 +100,7 @@ export default function HowItWorks() {
             id="how-it-works-heading"
             className="font-display text-3xl text-white md:text-4xl"
           >
-            Get Started in Seconds
+            How to Use King Data Visualizer
           </h2>
           <div className="gold-gradient mx-auto h-1 w-32 rounded-full" />
           <p className="text-base text-slate-300 md:text-lg">

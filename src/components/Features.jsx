@@ -14,7 +14,7 @@ const features = [
   {
     title: "10+ Chart Types",
     description:
-      "From line and bar to radar, heatmap, and bubble views for every analysis workflow.",
+      "King Data Visualizer supports 10+ chart types with interactive visualizations from line and bar to radar, heatmap, and bubble views for every analysis workflow.",
     icon: RiBarChartBoxLine,
     proof: "11 chart families",
     featured: true,
@@ -22,28 +22,28 @@ const features = [
   {
     title: "CSV & Manual Input",
     description:
-      "Import CSV files instantly or enter values manually in the intuitive data table editor.",
+      "Import CSV files instantly or enter values manually in King Data Visualizer's intuitive data table editor.",
     icon: RiTableLine,
     proof: "Up to 50k rows",
   },
   {
     title: "Interactive Tooltips",
     description:
-      "Hover any data point to reveal polished detail overlays with clean metric formatting.",
+      "Hover any data point to reveal polished detail overlays with clean metric formatting and interactive tooltips for precise data points.",
     icon: RiCursorLine,
     proof: "Point-level precision",
   },
   {
     title: "Multi-Series Support",
     description:
-      "Compare multiple series in one chart with clear color coding and instant series switching.",
+      "Compare multiple series in one chart with clear color coding and instant series switching for multi-series charts.",
     icon: RiStackLine,
     proof: "Unlimited overlays",
   },
   {
     title: "Dark & Light Mode",
     description:
-      "Switch themes seamlessly. Both dark and light modes are tuned for clarity and comfort.",
+      "Switch themes seamlessly in King Data Visualizer. Both dark and light modes are tuned for clarity and comfort.",
     icon: RiMoonClearLine,
     proof: "One-click toggle",
   },
@@ -73,12 +73,12 @@ const Features = () => {
   };
 
   return (
-    <section ref={sectionRef} className="relative overflow-hidden bg-dark px-6 py-24">
+    <section ref={sectionRef} className="relative overflow-hidden bg-dark px-6 py-24" role="region" aria-labelledby="features-heading">
       <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-gold/50 to-transparent" />
       <div className="mx-auto max-w-7xl">
         <div className="mb-12 space-y-4 text-center">
-          <h2 className="font-display text-3xl text-white md:text-4xl">
-            Everything You Need to Visualize Data
+          <h2 id="features-heading" className="font-display text-3xl text-white md:text-4xl">
+            King Data Visualizer Features
           </h2>
           <div className="gold-gradient mx-auto h-1 w-32 rounded-full" />
           <p className="mx-auto max-w-3xl text-slate-300">

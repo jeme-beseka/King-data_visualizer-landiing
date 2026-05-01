@@ -563,11 +563,11 @@ const ChartTypesGallery = () => {
             id="chart-types-heading"
             className="font-display bg-linear-to-r from-white via-gold-light to-gold bg-clip-text text-3xl text-transparent md:text-4xl"
           >
-            20+ Chart Types
+            King Data Visualizer — 20+ Chart Types
           </h2>
           <div className="gold-gradient mx-auto h-1 w-36 rounded-full" />
           <p className="mx-auto max-w-2xl text-slate-300">
-            The right chart for every dataset.
+            King Data Visualizer supports over 20 chart types, making it the most versatile free desktop data visualization tool for Windows.
           </p>
 
           <div

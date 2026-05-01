@@ -90,7 +90,7 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative flex min-h-svh items-center overflow-hidden px-6 pb-14 pt-28 md:min-h-screen">
+    <section className="relative flex min-h-svh items-center overflow-hidden px-6 pb-14 pt-28 md:min-h-screen" role="region" aria-labelledby="hero-heading">
       <div className="pointer-events-none absolute inset-0 -z-10">
         <div className="absolute left-1/2 top-1/2 h-[28rem] w-[28rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,rgba(255,215,0,0.18),rgba(255,215,0,0)_70%)] blur-3xl" />
       </div>
@@ -108,6 +108,7 @@ const Hero = () => {
           </motion.p>
 
           <motion.h1
+            id="hero-heading"
             custom={1}
             variants={staggerChildren}
             initial="hidden"
@@ -125,8 +126,7 @@ const Hero = () => {
             animate="show"
             className="max-w-2xl text-lg text-slate-300 md:text-xl"
           >
-            From CSV to executive-ready charts in under 60 seconds. Transform your data into
-            stunning, interactive visualizations in a native desktop workspace.
+            From CSV to executive-ready charts in under 60 seconds. King Data Visualizer is a free desktop data visualization app that transforms your data into stunning, interactive visualizations in a native desktop workspace.
           </motion.p>
 
           <motion.div
@@ -156,6 +156,7 @@ const Hero = () => {
               <button
                 type="button"
                 onClick={handleDownload}
+                aria-label="Download King Data Visualizer for Windows"
                 className="glow gold-gradient inline-flex items-center gap-2 rounded-xl px-6 py-3 text-sm font-bold text-dark transition-transform duration-300 hover:-translate-y-0.5"
               >
                 <FiDownload size={16} />
@@ -188,6 +189,11 @@ const Hero = () => {
             ))}
             <span className="text-xs text-[#c8ab64]">Latest stable: v3.3 • SHA256 available</span>
           </motion.div>
+          
+          {/* Visually hidden SEO text for Google */}
+          <p className="sr-only text-xs text-slate-500">
+            King Data Visualizer is a free Windows desktop application by Jeme Beseka for creating interactive data visualizations from CSV files and manual data entry.
+          </p>
         </div>
 
         <motion.div
@@ -227,7 +233,7 @@ const Hero = () => {
               </div>
             </div>
 
-            <div className="h-64 w-full">
+            <div className="h-64 w-full min-h-[256px]">
               <ResponsiveContainer width="100%" height="100%">
                 <LineChart data={chartData} margin={{ top: 5, right: 12, left: -20, bottom: 5 }}>
                   <CartesianGrid stroke="rgba(255,255,255,0.08)" strokeDasharray="3 3" />

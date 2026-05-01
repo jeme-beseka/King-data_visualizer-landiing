@@ -45,16 +45,19 @@ const CHART_TYPES_SLIDES = [
     image: barChartUnits,
     caption:
       "Bar Chart — Monthly Units Sold. Compare categorical data at a glance with clean, readable bars.",
+    alt: "King Data Visualizer bar chart showing monthly units sold data",
   },
   {
     image: pieChartProfit,
     caption:
       "Pie Chart — Profit Distribution by Month. Instantly see proportional breakdowns across categories.",
+    alt: "King Data Visualizer pie chart showing profit distribution by month",
   },
   {
     image: radarChartPlayers,
     caption:
       "Radar Chart — Player Attribute Comparison. Multi-series spider chart for multi-dimensional analysis.",
+    alt: "King Data Visualizer radar chart comparing player attributes across five dimensions",
   },
 ];
 
@@ -68,6 +71,7 @@ const TABS = [
     caption:
       "The King Data Visualizer welcome screen — clean, modern, and immediately guides you into the app.",
     note: "First thing you see on launch. Click 'Get Started' to enter the main interface.",
+    alt: "King Data Visualizer welcome screen showing the app landing page with Get Started button",
   },
   {
     id: "chart-types",
@@ -86,6 +90,7 @@ const TABS = [
     caption:
       "Full dark mode — every element of the interface adapts, including charts, panels, and the toolbar.",
     note: "Toggle dark/light mode anytime with the Theme button. Your eyes will thank you.",
+    alt: "King Data Visualizer dark mode showing histogram chart of test score distribution",
   },
   {
     id: "tooltips",
@@ -96,6 +101,7 @@ const TABS = [
     caption:
       "Hover over any data point to see precise values instantly — available on all 10+ chart types.",
     note: "Tooltip shows: Series Name, Metric, and Value — formatted cleanly for fast reading.",
+    alt: "King Data Visualizer interactive tooltip on line chart showing PlayerE speed value",
   },
   {
     id: "multi-series",
@@ -106,6 +112,7 @@ const TABS = [
     caption:
       "Scatter Plot with 5 simultaneous data series — each player shown in a distinct color and marker shape.",
     note: "Select which series to display using the built-in series selector dialog.",
+    alt: "King Data Visualizer scatter plot with five simultaneous data series",
   },
 ];
 
@@ -268,21 +275,33 @@ export default function Screenshots() {
                 <>
                   <div className="hidden md:block">
                     <WindowFrame active>
-                      <img
-                        src={tab.image}
-                        alt={tab.label}
-                        className="block w-full object-cover object-top"
-                        loading="lazy"
-                      />
+                      <div className="relative aspect-video w-full overflow-hidden">
+                        <img
+                          src={tab.image}
+                          alt={tab.alt || tab.label}
+                          className="block h-full w-full object-cover object-top"
+                          loading={tab.id === "welcome" ? "eager" : "lazy"}
+                          fetchPriority={tab.id === "welcome" ? "high" : "auto"}
+                          decoding="async"
+                          width="1920"
+                          height="1080"
+                        />
+                      </div>
                     </WindowFrame>
                   </div>
                   <MobileSimpleFrame active>
-                    <img
-                      src={tab.image}
-                      alt={tab.label}
-                      className="block w-full object-cover object-top"
-                      loading="lazy"
-                    />
+                    <div className="relative aspect-video w-full overflow-hidden">
+                      <img
+                        src={tab.image}
+                        alt={tab.alt || tab.label}
+                        className="block h-full w-full object-cover object-top"
+                        loading={tab.id === "welcome" ? "eager" : "lazy"}
+                        fetchPriority={tab.id === "welcome" ? "high" : "auto"}
+                        decoding="async"
+                        width="1920"
+                        height="1080"
+                      />
+                    </div>
                   </MobileSimpleFrame>
                 </>
               )}
@@ -291,12 +310,15 @@ export default function Screenshots() {
                 <div className="space-y-4">
                   <div className="hidden md:block">
                     <WindowFrame active>
-                      <div className="relative">
+                      <div className="relative aspect-video w-full overflow-hidden">
                         <img
                           src={carouselMeta.slide.image}
-                          alt={`${tab.label} example ${slideIndex + 1}`}
-                          className="block w-full object-cover object-top"
+                          alt={carouselMeta.slide.alt || `${tab.label} example ${slideIndex + 1}`}
+                          className="block h-full w-full object-cover object-top"
                           loading="lazy"
+                          decoding="async"
+                          width="1920"
+                          height="1080"
                         />
                         <div className="pointer-events-none absolute inset-y-0 left-0 flex w-12 items-center bg-linear-to-r from-dark/70 to-transparent md:w-16" />
                         <div className="pointer-events-none absolute inset-y-0 right-0 flex w-12 items-center justify-end bg-linear-to-l from-dark/70 to-transparent md:w-16" />
@@ -326,12 +348,15 @@ export default function Screenshots() {
 
                   <div className="md:hidden">
                     <MobileSimpleFrame active>
-                      <div className="relative">
+                      <div className="relative aspect-video w-full overflow-hidden">
                         <img
                           src={carouselMeta.slide.image}
-                          alt={`${tab.label} example ${slideIndex + 1}`}
-                          className="block w-full object-cover object-top"
+                          alt={carouselMeta.slide.alt || `${tab.label} example ${slideIndex + 1}`}
+                          className="block h-full w-full object-cover object-top"
                           loading="lazy"
+                          decoding="async"
+                          width="1920"
+                          height="1080"
                         />
                         <div className="absolute inset-y-0 left-2 flex items-center">
                           <button

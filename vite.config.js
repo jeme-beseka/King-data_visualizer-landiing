@@ -6,20 +6,28 @@ export default defineConfig({
   base: "./",
   build: {
     outDir: "dist",
-    assetsInlineLimit: 100000,
-    chunkSizeWarningLimit: 100000,
+    target: "es2015",
+    sourcemap: true,
+    assetsInlineLimit: 0,
+    chunkSizeWarningLimit: 1000,
     rollupOptions: {
       output: {
         manualChunks: (id) => {
           if (id.includes('node_modules')) {
-            if (id.includes('react') || id.includes('react-dom')) {
-              return 'vendor';
+            if (id.includes('react') || id.includes('react-dom') || id.includes('react-router-dom')) {
+              return 'vendor-react';
             }
             if (id.includes('framer-motion')) {
-              return 'framer';
+              return 'vendor-motion';
             }
             if (id.includes('recharts')) {
-              return 'recharts';
+              return 'vendor-charts';
+            }
+            if (id.includes('react-icons')) {
+              return 'vendor-icons';
+            }
+            if (id.includes('react-scroll') || id.includes('react-intersection-observer')) {
+              return 'vendor-scroll';
             }
           }
         },

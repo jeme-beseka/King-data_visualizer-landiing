@@ -50,7 +50,7 @@ const Navbar = () => {
           : "border-gold/10 bg-dark/55 backdrop-blur-md"
       }`}
     >
-      <nav className="mx-auto flex w-full max-w-7xl items-center justify-between gap-4">
+      <nav role="navigation" aria-label="Main navigation" className="mx-auto flex w-full max-w-7xl items-center justify-between gap-4">
         <Link
           to="hero"
           spy
@@ -65,7 +65,7 @@ const Navbar = () => {
             className="h-9 w-9 rounded-md border border-gold/35 object-cover"
             loading="lazy"
           />
-          <span className="font-display text-sm text-gold-light md:text-base">
+          <span className="font-display text-sm text-gold-light md:text-base" aria-label="King Data Visualizer - Home">
             King Data Visualizer
           </span>
         </Link>
@@ -90,6 +90,7 @@ const Navbar = () => {
         <div className="hidden md:block">
           <button
             type="button"
+            aria-label="Try the web version of King Data Visualizer (coming soon)"
             className="relative rounded-lg border border-gold px-5 py-2 text-sm font-semibold text-gold-light transition-all duration-300 hover:bg-gold/10 hover:shadow-[0_0_20px_rgba(255,215,0,0.2)]"
           >
             Try Web App
@@ -137,6 +138,7 @@ const Navbar = () => {
                 ))}
                 <button
                   type="button"
+                  aria-label="Try the web version of King Data Visualizer (coming soon)"
                   className="relative mt-1 rounded-lg border border-gold px-4 py-2 text-sm font-semibold text-gold-light"
                 >
                   Try Web App

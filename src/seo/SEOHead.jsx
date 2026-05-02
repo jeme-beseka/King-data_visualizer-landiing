@@ -19,6 +19,7 @@ const SEOHead = ({ title, description, url, image, robots }) => {
 
   return (
     <Helmet>
+      <meta name="google-site-verification" content="DbDQzUPULc-YzS3PbGGp95hvb6pEbjU8tsISh3y-hFw" />
       {/* Primary Meta Tags */}
       <title>{finalTitle}</title>
       <meta name="description" content={finalDescription} />

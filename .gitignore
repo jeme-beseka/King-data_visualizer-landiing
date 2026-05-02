@@ -12,6 +12,9 @@ dist
 dist-ssr
 *.local
 
+# SEO documentation (deployment guide)
+SEO_POST_DEPLOYMENT_GUIDE.md
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
